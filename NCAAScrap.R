@@ -1,0 +1,82 @@
+#install.packages('XML')
+library(XML)
+#theurl <- "http://www.cbssports.com/collegebasketball/teams/stats/UK/kentucky-wildcats"
+#tables <- readHTMLTable(theurl)
+#n.rows <- unlist(lapply(tables, function(t) dim(t)[1]))
+
+fx <- function(t,r,ppf,region,u){return(cbind(t, r, ppf, region,data.frame(readHTMLTable(u)[4])))}
+
+t1 = fx('Kentucky', '1', '4.17', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/UK/kentucky-wildcats')
+#N/A
+t3 = fx('Cincinnati', '8', '0.671', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/CINCY/cincinnati-bearcats')
+t4 = fx('Purdue', '9', '0.494', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/PURDUE/purdue-boilermakers')
+t5 = fx('West Virginia', '5', '1.087', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/WVU/west-virginia-mountaineers')
+t6 = fx('Buffalo', '12', '0.572', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/BUFF/buffalo-bulls')
+t7 = fx('Maryland', '4', '0.987', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/MD/maryland-terrapins')
+t8 = fx('Valparaiso', '13', '0.552', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/VALPO/valparaiso-crusaders')
+t9 = fx('Butler', '6', '0.788', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/BUTLER/butler-bulldogs')
+t10 = fx('Texas', '11', '0.896', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/TEXAS/texas-longhorns')
+t11 = fx('Notre Dame', '3', '1.823', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/ND/notre-dame-fighting-irish')
+t12 = fx('Northeastern', '14', '0.1523', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/NEAST/northeastern-huskies')
+t13 = fx('Wichita St.', '7', '1.422', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/WICHST/wichita-state-shockers')
+t14 = fx('Indiana', '10', '0.378', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/IND/indiana-hoosiers')
+t15 = fx('Kansas', '2', '1.697', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/KANSAS/kansas-jayhawks')
+t16 = fx('New Mexico St.', '15', '0.2117', 'Midwest', 'http://www.cbssports.com/collegebasketball/teams/stats/NMEXST/new-mexico-state-aggies')
+
+t17 = fx('Wisconsin', '1', '3.059', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/WISC/wisconsin-badgers')
+t18 = fx('C. Carolina', '16', '0.0561', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/CSTCAR/coastal-carolina-chanticleers')
+t19 = fx('Oregon', '8', '0.587', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/OREG/oregon-ducks')
+t20 = fx('Oklahoma St.', '9', '0.67', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/OKLAST/oklahoma-state-cowboys')
+t21 = fx('Arkansas', '5', '1.153', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/ARK/arkansas-razorbacks')
+t22 = fx('Wofford', '12', '0.3359', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/WOFF/wofford-terriers')
+t23 = fx('North Carolina', '4', '1.622', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/UNC/north-carolina-tar-heels')
+t24 = fx('Harvard', '13', '0.2955', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/HARV/harvard-crimson')
+t25 = fx('Xavier', '6', '0.877', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/XAVIER/xavier-musketeers')
+#N/A
+t27 = fx('Baylor', '3', '1.501', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/BAYLOR/baylor-bears')
+t28 = fx('Georgia St.', '14', '0.3188', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/GAST/georgia-state-panthers')
+t29 = fx('VCU', '7', '0.56', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/VCU/vcu-rams')
+t30 = fx('Ohio St.', '10', '0.746', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/OHIOST/ohio-state-buckeyes')
+t31 = fx('Arizona', '2', '3.224', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/ARIZ/arizona-wildcats')
+t32 = fx('Texas Southern', '15', '0.0252', 'West', 'http://www.cbssports.com/collegebasketball/teams/stats/TEXSO/texas-southern-tigers')
+
+t33 = fx('Villanova', '1', '3.076', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/NOVA/villanova-wildcats')
+t34 = fx('Lafayette', '16', '0.0375', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/LAFAY/lafayette-leopards')
+t35 = fx('N.C. State', '8', '0.661', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/NCST/nc-state-wolfpack')
+t36 = fx('LSU', '9', '0.602', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/LSU/lsu-tigers')
+t37 = fx('Northern Iowa', '5', '1.739', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/NIOWA/northern-iowa-panthers')
+t38 = fx('Wyoming', '12', '0.1925', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/WYO/wyoming-cowboys')
+t39 = fx('Louisville', '4', '1.331', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/LVILLE/louisville-cardinals')
+t40 = fx('UC Irvine', '13', '0.2637', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/UCIRV/uc-irvine-anteaters')
+t41 = fx('Providence', '6', '0.868', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/PROV/providence-friars')
+#N/A
+t43 = fx('Oklahoma', '3', '1.916', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/OKLA/oklahoma-sooners')
+t44 = fx('Albany', '14', '0.1352', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/ALBANY/albany-great-danes')
+t45 = fx('Michigan St.', '7', '0.899', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/MICHST/michigan-state-spartans')
+t46 = fx('Georgia', '10', '0.495', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/UGA/georgia-bulldogs')
+t47 = fx('Virginia', '2', '2.912', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/UVA/virginia-cavaliers')
+t48 = fx('Belmont', '15', '0.0571', 'East', 'http://www.cbssports.com/collegebasketball/teams/stats/BELMONT/belmont-bruins')
+
+t49 = fx('Duke', '1', '2.524', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/DUKE/duke-blue-devils')
+#N/A
+t51 = fx('San Diego St.', '8', '0.846', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/SDGST/san-diego-state-aztecs')
+t52 = fx('St. Johns', '9', '0.576', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/STJOHN/st-johns-red-storm')
+t53 = fx('Utah', '5', '1.757', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/UTAH/utah-utes')
+t54 = fx('S.F. Austin', '12', '0.439', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/SFA/stephen-f-austin-lumberjacks')
+t55 = fx('Georgetown', '4', '1.371', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/GTOWN/georgetown-hoyas')
+t56 = fx('E. Washington', '13', '0.1853', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/EWASH/eastern-washington-eagles')
+t57 = fx('SMU', '6', '1.092', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/SMU/smu-mustangs')
+t58 = fx('UCLA', '11', '0.557', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/UCLA/ucla-bruins')
+t59 = fx('Iowa St.', '3', '1.809', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/IOWAST/iowa-state-cyclones')
+t60 = fx('UAB', '14', '0.1654', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/UAB/uab-blazers')
+t61 = fx('Iowa', '7', '0.832', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/IOWA/iowa-hawkeyes')
+t62 = fx('Davidson', '10', '0.632', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/DAVID/davidson-wildcats')
+t63 = fx('Gonzaga', '2', '2.617', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/GONZAG/gonzaga-bulldogs')
+t64 = fx('N. Dakota St.', '15', '0.0731', 'South', 'http://www.cbssports.com/collegebasketball/teams/stats/NDAKST/north-dakota-state-bison')
+
+setwd("C:\\Users\\Administrator\\Documents")
+All = rbind(t1, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t27, t28, t29, t30, t31, t32, t33, t34, t35, t36, t37, t38, t39, t40, t41, t43, t44, t45, t46, t47, t48, t49, t51, t52, t53, t54, t55, t56, t57, t58, t59, t60, t61, t62, t63, t64)
+write.csv(All, "NCAA.csv", row.names = FALSE)
+
+
+
